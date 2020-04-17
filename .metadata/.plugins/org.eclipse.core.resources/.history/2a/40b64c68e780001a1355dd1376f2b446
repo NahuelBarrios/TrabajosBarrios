@@ -35,7 +35,7 @@ int main(void) {
 	switch(option)
 	{
 	case 1:
-		if(utn_getFloat(&x,"\nIngrese 1er operando: ","\nError.Elija un numero valido entre el 0 y 1.000.000\n",0,1000000,3) == 0)
+		if(utn_getFloat(&x,"\nIngrese 1er operando: ","\nError.Elija un numero valido entre el 1 y 1.000.000\n",0,1000000,3) == 0)
 		{
 		printf("Se ingreso el numero: %2.f",x);
 		}
@@ -46,7 +46,7 @@ int main(void) {
 		break;
 
 	case 2:
-		if(utn_getFloat(&y,"\nIngrese 2er operando: ","\nError.Elija un numero valido entre el 0 y 1.000.000\n",0,1000000,3) == 0)
+		if(utn_getFloat(&y,"\nIngrese 2er operando: ","\nError.Elija un numero valido entre el 1 y 1.000.000\n",0,1000000,3) == 0)
 		{
 		printf("Se ingreso el numero: %2.f",y);
 		}
