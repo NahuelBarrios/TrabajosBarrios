@@ -9,8 +9,8 @@
 #define UTN_H_
 
 /**
- * \brief Solicita un entero al usuario, lo valida, verifica y devuelve el resultado
- * \param pResultado Puntero al resultado alli se dejara el entero ingresado por el usuario
+ * \brief Solicita un numero al usuario, lo valida, verifica y devuelve el resultado
+ * \param pResultado Puntero al resultado alli se dejara el numero ingresado por el usuario
  * \param mensaje Es el mensaje a ser mostrado
  * \param mensajeError Es el mensaje a ser mostrado en caso de error
  * \param minimo Valor minimo aceptado

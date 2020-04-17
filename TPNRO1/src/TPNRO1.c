@@ -23,7 +23,7 @@ int main(void) {
 
 	while(option != 5)
 	{
-	utn_getInt(&option,"\n *** Bienvenidos a la calculadora Basica ***\n \
+	utn_getInt(&option,"\n\n *** Bienvenidos a la calculadora Basica ***\n \
 					\n1. Ingresar 1er operando \
 					\n2. Ingresar 2do operando \
 					\n3. Calcular todas las operaciones\
@@ -35,9 +35,9 @@ int main(void) {
 	switch(option)
 	{
 	case 1:
-		if(utn_getFloat(&x,"\nIngrese 1er operando: ","\nError.Elija un numero valido entre el 1 y 1.000.000\n",1,1000000,3) == 0)
+		if(utn_getFloat(&x,"\nIngrese 1er operando: ","\nError.Elija un numero valido entre el 1 y 1.000.000\n",0,1000000,3) == 0)
 		{
-		printf("\n Se ingreso el numero: %2.f",x);
+		printf("Se ingreso el numero: %2.f",x);
 		}
 		else{
 			x = 0;
@@ -46,9 +46,9 @@ int main(void) {
 		break;
 
 	case 2:
-		if(utn_getFloat(&y,"\nIngrese 2er operando: ","\nError.Elija un numero valido entre el 1 y 1.000.000\n",1,1000000,3) == 0)
+		if(utn_getFloat(&y,"\nIngrese 2er operando: ","\nError.Elija un numero valido entre el 1 y 1.000.000\n",0,1000000,3) == 0)
 		{
-		printf("\n Se ingreso el numero: %2.f",y);
+		printf("Se ingreso el numero: %2.f",y);
 		}
 		else{
 			y=0;
