@@ -5,8 +5,8 @@
  *      Author: Nahu_
  */
 
-#ifndef EMPLOYEE_H_
-#define EMPLOYEE_H_
+#ifndef ARRAYEMPLOYEE_H_
+#define ARRAYEMPLOYEE_H_
 
 typedef struct
 {

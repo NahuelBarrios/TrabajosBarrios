@@ -5,11 +5,11 @@
  *      Author: Nahu_
  */
 
+#include "ArrayEmployee.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
-#include "employee.h"
 
 int initEmployees(Employee* list, int len)
 {
@@ -67,7 +67,7 @@ int loadEmployee(Employee* list,int len,int* idCont)
 			auxId = *idCont;
 			utn_getTexto("\nEnter name: ","\nError",1,51,3,auxName);
 			utn_getTexto("\nEnter last name: ","\nError",1,51,3,auxLastName);
-			utn_getFloat("\nEnter salary: ","\nError",1,sizeof(float),1,1000000,3,&auxSalary);
+			utn_getFloat("\nEnter salary: ","\nError",1,sizeof(float),1,100000,3,&auxSalary);
 			utn_getUnsignedInt("\nEnter sector: ","\nError",1,sizeof(int),1,10,3,&auxSector);
 
 			addEmployee(list,len,auxId,auxName,auxLastName,auxSalary,auxSector);
@@ -136,7 +136,7 @@ int modifyEmployee(Employee* list, int len)
 	        {
 	            do
 	            {
-	                utn_getChar("\Modify: \nA-Name\nB-Last Name\nC-Salary\nD-Sector E-Exit","\nError",'A','Z',1,&opcion);
+	                utn_getChar("\nModify: \nA-Name\nB-Last Name\nC-Salary\nD-Sector \nE-Exit","\nError",'A','Z',1,&opcion);
 	                switch(opcion)
 	                {
 	                    case 'A':
@@ -146,10 +146,10 @@ int modifyEmployee(Employee* list, int len)
 	                    	utn_getTexto("\nEnter new last name: ","\nError",1,51,3,list[posicion].lastName);
 	                        break;
 	                    case 'C':
-	                    	utn_getFloat("\nEnter new salary: ","\nError",1,sizeof(float),0,1,3,&list[posicion].salary);
+	                    	utn_getFloat("\nEnter new salary: ","\nError",1,sizeof(float),0,1,100000,&list[posicion].salary);
 	                        break;
 	                    case 'D':
-	                    	utn_getUnsignedInt("\nEnter new sector: ","\nError",1,sizeof(int),1,1,3,&list[posicion].sector);;
+	                    	utn_getUnsignedInt("\nEnter new sector: ","\nError",1,sizeof(int),1,10,3,&list[posicion].sector);;
 	                        break;
 	                    case 'E':
 	                        break;
@@ -293,7 +293,7 @@ int salaryReport(Employee* list,int len)
 			if(list[i].isEmpty == 0)
 			{
 				contador++;
-				acumulador =+ list[i].salary;
+				acumulador = acumulador + list[i].salary;
 			}
 		}
 

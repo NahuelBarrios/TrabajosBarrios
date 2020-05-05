@@ -11,8 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "ArrayEmployee.h"
 #include "utn.h"
-#include "employee.h"
 #define QTY_EMPLOYEE 1000
 
 int main(void) {
@@ -28,7 +28,7 @@ int main(void) {
 	int searchId;
 	while(option != 5)
 	{
-		utn_getUnsignedInt("\nMENU\n1-Load employee\n2-Modify employee\n3-Delete employee\n4-Reports\n5-Exit\Select the option: ","\nError\n",1,sizeof(int),1,5,3,&option);
+		utn_getUnsignedInt("\nMENU\n1-Load employee\n2-Modify employee\n3-Delete employee\n4-Reports\n5-Exit\nSelect the option: ","\nError\n",1,sizeof(int),1,5,3,&option);
 
 		switch(option)
 		{

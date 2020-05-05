@@ -35,7 +35,7 @@ utn_getFecha
 int getString(char* msg, char* msgError, int min, int max, int* reintentos, char* resultado)
 {
     int retorno=-1;
-    char bufferStr[max+10];
+    char bufferStr[4096];
 
     if(msg!=NULL && msgError!=NULL && min<=max && reintentos>=0 && resultado!=NULL)
     {
@@ -52,7 +52,7 @@ int getString(char* msg, char* msgError, int min, int max, int* reintentos, char
                 retorno=0;
                 break;
             }
-            printf("%s 1",msgError);
+            printf("%s",msgError);
             (*reintentos)--;
         }
         while((*reintentos)>=0);
@@ -79,7 +79,7 @@ int utn_getName(char* msg, char* msgError, int min, int max, int reintentos, cha
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -125,7 +125,7 @@ int utn_getUnsignedInt(  char* msg,char* msgError,int minSize,int maxSize,int mi
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -169,7 +169,7 @@ int utn_getSignedInt(char* msg, char* msgError, int minSize, int maxSize, int mi
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -197,7 +197,7 @@ int isValidSignedNumber(char* stringRecibido)
 int utn_getFloat(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, float* input)
 {
     int retorno=-1;
-    char bufferStr[maxSize];
+    char bufferStr[4069];
 
     if(msg!=NULL && msgError!=NULL && minSize<maxSize && min<max && reintentos>=0 && input!=NULL)
     {
@@ -213,7 +213,7 @@ int utn_getFloat(char* msg, char* msgError, int minSize, int maxSize, int min, i
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -257,7 +257,7 @@ int utn_getTelefono(char* msg, char* msgError, int minSize, int maxSize, int min
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -303,7 +303,7 @@ int utn_getDNI(char* msg, char* msgError, int minSize, int maxSize, int reintent
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -350,7 +350,7 @@ int utn_getCUIT(char* msg, char* msgError, int reintentos, char* input)
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -429,7 +429,7 @@ int utn_getEmail(char* msg, char* msgError, int minSize, int maxSize, int reinte
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -475,7 +475,7 @@ int utn_getTexto(char* msg, char* msgError, int minSize, int maxSize, int reinte
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -520,7 +520,7 @@ int utn_getAlfanumerico(char* msg, char* msgError, int minSize, int maxSize, int
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
@@ -560,14 +560,13 @@ int utn_getChar(char* msg, char* msgError, int min, int max, int reintentos, cha
             {
                 if(isValidChar(bufferChar[0])==1)
                 {
-                    printf("OK");
                     *resultado=bufferChar[0];
                     retorno=0;
                     break;
                 }
                 else
                 {
-                    printf("%s 2",msgError);
+                    printf("%s",msgError);
                     reintentos--;
                 }
             }
