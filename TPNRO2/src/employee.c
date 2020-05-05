@@ -33,12 +33,12 @@ int addEmployee(Employee* list, int len, int id, char name[],char lastName[],flo
 	if(list!=NULL && len>0 && id>0 && name!=NULL && lastName!=NULL && salary>0 && sector>0)
 	{
 
-		list[len].id = id;
-	    strcpy(list[len].name, name);
-	    strcpy(list[len].lastName, lastName);
-	    list[len].salary = salary;
-	    list[len].sector = sector;
-	    list[len].isEmpty = 1;
+		list[id].id = id;
+	    strcpy(list[id].name, name);
+	    strcpy(list[id].lastName, lastName);
+	    list[id].salary = salary;
+	    list[id].sector = sector;
+	    list[id].isEmpty = 0;
 
 	    retorno = 0;
 	}
@@ -65,10 +65,10 @@ int loadEmployee(Employee* list,int len,int* idCont)
 		{
 			(*idCont)++;
 			auxId = *idCont;
-			utn_getTexto("\nIngrese el nombre: ","\nError",1,51,3,auxName);
-			utn_getTexto("\nIngrese el apellido: ","\nError",1,51,3,auxLastName);
-			utn_getFloat("\nIngrese el salario: ","\nError",1,sizeof(float),1,1000000,3,&auxSalary);
-			utn_getUnsignedInt("\nIngrese el sector: ","\nError",1,sizeof(int),1,10,3,&auxSector);
+			utn_getTexto("\nEnter name: ","\nError",1,51,3,auxName);
+			utn_getTexto("\nEnter last name: ","\nError",1,51,3,auxLastName);
+			utn_getFloat("\nEnter salary: ","\nError",1,sizeof(float),1,1000000,3,&auxSalary);
+			utn_getUnsignedInt("\nEnter sector: ","\nError",1,sizeof(int),1,10,3,&auxSector);
 
 			addEmployee(list,len,auxId,auxName,auxLastName,auxSalary,auxSector);
 
@@ -77,18 +77,18 @@ int loadEmployee(Employee* list,int len,int* idCont)
 
 	return retorno;
 }
-int findEmpty(Employee* array, int size, int* posicion)
+int findEmpty(Employee* list, int len, int* position)
 {
 	   int retorno=-1;
 	    int i;
-	    if(array!= NULL && size>=0 && posicion!=NULL)
+	    if(list!= NULL && len>=0 && position!=NULL)
 	    {
-	        for(i=0;i<size;i++)
+	        for(i=0;i<len;i++)
 	        {
-	            if(array[i].isEmpty==1)
+	            if(list[i].isEmpty==1)
 	            {
 	                retorno=0;
-	                *posicion=i;
+	                *position=i;
 	                break;
 	            }
 	        }
@@ -97,7 +97,7 @@ int findEmpty(Employee* array, int size, int* posicion)
 }
 //-------------------------------------------------------------------------------------------------------------------------------
 
-int findEmployeeById(Employee* list, int len,int id,int* posicion)
+int findEmployeeById(Employee* list, int len,int id,int* position)
 {
 	int retorno=-1;
 	    int i;
@@ -110,7 +110,7 @@ int findEmployeeById(Employee* list, int len,int id,int* posicion)
 	            else if(list[i].id==id)
 	            {
 	                retorno=0;
-	                *posicion=i;
+	                *position=i;
 	                break;
 	            }
 	        }
@@ -119,44 +119,44 @@ int findEmployeeById(Employee* list, int len,int id,int* posicion)
 
 }
 
-int modifyEmployee(Employee* array, int sizeArray)
+int modifyEmployee(Employee* list, int len)
 {
 	   int retorno=-1;
 	    int posicion;
 	    int id;
 	    char opcion;
-	    if(array!=NULL && sizeArray>0)
+	    if(list!=NULL && len>0)
 	    {
-	        utn_getUnsignedInt("\nId de empleado a modificar: ","\nError",1,sizeof(int),1,sizeArray,1,&id);
-	        if(findEmployeeById(array,sizeArray,id,&posicion)==-1)
+	        utn_getUnsignedInt("\nEmployee ID to modify: ","\nError",1,sizeof(int),1,len,1,&id);
+	        if(findEmployeeById(list,len,id,&posicion)==-1)
 	        {
-	            printf("\nNo existe este ID");
+	            printf("\nThere is no such Id");
 	        }
 	        else
 	        {
 	            do
 	            {
-	                utn_getChar("\nModificar: \nA-Nombre\nB-Apellido\nC-Salario\nD-Sector S-Salir","\nError",'A','Z',1,&opcion);
+	                utn_getChar("\Modify: \nA-Name\nB-Last Name\nC-Salary\nD-Sector E-Exit","\nError",'A','Z',1,&opcion);
 	                switch(opcion)
 	                {
 	                    case 'A':
-	                    	utn_getTexto("\nIngrese el nuevo nombre: ","\nError",1,51,3,array[posicion].name);
+	                    	utn_getTexto("\nEnter new name: ","\nError",1,51,3,list[posicion].name);
 	                        break;
 	                    case 'B':
-	                    	utn_getTexto("\nIngrese el nuevo apellido: ","\nError",1,51,3,array[posicion].lastName);
+	                    	utn_getTexto("\nEnter new last name: ","\nError",1,51,3,list[posicion].lastName);
 	                        break;
 	                    case 'C':
-	                    	utn_getFloat("\nIngrese el nuevo salario: ","\nError",1,sizeof(float),0,1,3,&array[posicion].salary);
+	                    	utn_getFloat("\nEnter new salary: ","\nError",1,sizeof(float),0,1,3,&list[posicion].salary);
 	                        break;
 	                    case 'D':
-	                    	utn_getUnsignedInt("\nIngrese nuevo sector: ","\nError",1,sizeof(int),1,1,3,&array[posicion].sector);;
+	                    	utn_getUnsignedInt("\nEnter new sector: ","\nError",1,sizeof(int),1,1,3,&list[posicion].sector);;
 	                        break;
-	                    case 'S':
+	                    case 'E':
 	                        break;
 	                    default:
-	                        printf("\nOpcion no valida");
+	                        printf("\nOption not valid");
 	                }
-	            }while(opcion!='S');
+	            }while(opcion!='E');
 	            retorno=0;
 	        }
 	    }
@@ -175,7 +175,7 @@ int removeEmployee(Employee* list, int len, int id)
 
 	        if(findEmployeeById(list,len,id,&posicion)==-1)
 	        {
-	            printf("\nNo existe este ID");
+	            printf("\nThere is no such id");
 	        }
 	        else
 	        {
@@ -202,8 +202,10 @@ int sortEmployees(Employee* list, int len, int order)
 	if(list!= NULL && len>0 && order>0)
 	{
 
-		if(order == 1)
+		switch(order)
 		{
+
+		case 1:
 			for(int i=0; i<len - 1; i++)
 			{
 				for(int j=i+1; j<len; j++)
@@ -222,10 +224,11 @@ int sortEmployees(Employee* list, int len, int order)
 					}
 				}
 			}
-		}
+			retorno = 0;
+			break;
 
-		else if(order == 2)
-		{
+
+			case 2:
 			for(int i = 0; i < len - 1; i++)
 			{
 				for(int j = i + 1; j < len; j++)
@@ -244,13 +247,106 @@ int sortEmployees(Employee* list, int len, int order)
 					}
 				}
 			}
-
-
+			retorno = 0;
+			break;
 		}
 
-		retorno = 0;
 	}
 
  return retorno;
 }
 
+int printEmployees(Employee* list, int length)
+{
+	 int retorno=-1;
+	    int i;
+	    if(list!=NULL && length>=0)
+	    {
+	        for(i=0;i<length;i++)
+	        {
+	            if(list[i].isEmpty==1)
+	                continue;
+	            else
+	            	printf("\n**************************************\nID: %d\nLast name: %s\nSector: %d\n",
+	            			list[i].id,list[i].lastName,list[i].sector);
+	        }
+	        retorno=0;
+	    }
+	    return retorno;
+
+}
+
+
+int salaryReport(Employee* list,int len)
+{
+	int retorno = -1;
+	int i;
+	int contador =0;
+	float acumulador = 0;
+	float total = 0;
+	int salarioMasPromedio = 0;
+
+	if(list!=NULL && len>0)
+	{
+		for(i=0;i<len;i++)
+		{
+			if(list[i].isEmpty == 0)
+			{
+				contador++;
+				acumulador =+ list[i].salary;
+			}
+		}
+
+		total = acumulador/contador;
+
+		for (i=0; i<len; i++)
+		{
+			if(list[i].isEmpty == 0 && list[i].salary >total)
+			{
+				salarioMasPromedio++;
+			}
+		}
+
+		    printf("\nTotal salary: %.2f ", acumulador);
+		    printf("\nAverage salary: %.2f ", total);
+		    printf("\nNumber of employees with higher than average salary: %d \n", salarioMasPromedio);
+
+
+	retorno = 0;
+	}
+	return retorno;
+}
+
+int report(Employee* list, int len)
+{
+	int retorno = -1;
+	int option = 0;
+	int order;
+
+	if (list != NULL && len >0)
+	{
+		while (option != 3)
+		{
+			utn_getUnsignedInt("\n1-List of employees alphabetically by Last Name and Sector\n2-Total and average wages, and how many employees exceed the average wage\n3-Exit\nSelect the option: ",
+				"\nError\n",1,sizeof(int),1,5,3,&option);
+			switch(option)
+			{
+			case 1:
+				utn_getUnsignedInt("\nSort by last name:\n1-upward\n2-falling\nSelect the option: ","\nError\n",1,sizeof(int),1,2,3,&order);
+				sortEmployees(list,len,order);
+				printEmployees(list,len);
+				break;
+			case 2:
+				salaryReport(list,len);
+				break;
+			case 3:
+				printf("\nExiting reports\n");
+				break;
+			default:
+				printf("\nEnter an option from 1 to 3\n");
+			}
+		}
+		retorno = 0;
+	}
+	return retorno;
+}

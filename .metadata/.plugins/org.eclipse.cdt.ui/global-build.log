@@ -1,5 +1,9 @@
-17:51:21 **** Incremental Build of configuration Debug for project TPNRO2 ****
+21:41:40 **** Incremental Build of configuration Debug for project TPNRO2 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TPNRO2.o" "..\\src\\TPNRO2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\employee.o" "..\\src\\employee.c" 
+gcc -o TPNRO2.exe "src\\TPNRO2.o" "src\\employee.o" "src\\utn.o" 
+Info: Nothing to build for TPNRO2
+21:45:57 **** Incremental Build of configuration Debug for project TPNRO2 ****
+Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\employee.o" "..\\src\\employee.c" 
 gcc -o TPNRO2.exe "src\\TPNRO2.o" "src\\employee.o" "src\\utn.o" 
