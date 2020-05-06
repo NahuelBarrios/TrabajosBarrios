@@ -29,6 +29,15 @@ typedef struct
 int initEmployees(Employee* list, int len);
 
 
+/** \brief check if there are any employees loaded
+ *
+ * \param list Employee*
+ * \param len int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
+ */
+int existEmployees(Employee* list, int len);
+
 /** \brief add in a existing list of employees the values received as parameters
  * in the first empty position
  * \param list employee*

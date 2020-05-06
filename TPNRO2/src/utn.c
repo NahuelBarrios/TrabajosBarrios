@@ -35,7 +35,7 @@ utn_getFecha
 int getString(char* msg, char* msgError, int min, int max, int* reintentos, char* resultado)
 {
     int retorno=-1;
-    char bufferStr[4096];
+    char bufferStr[max+10];
 
     if(msg!=NULL && msgError!=NULL && min<=max && reintentos>=0 && resultado!=NULL)
     {
@@ -197,7 +197,7 @@ int isValidSignedNumber(char* stringRecibido)
 int utn_getFloat(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, float* input)
 {
     int retorno=-1;
-    char bufferStr[4069];
+    char bufferStr[maxSize];
 
     if(msg!=NULL && msgError!=NULL && minSize<maxSize && min<max && reintentos>=0 && input!=NULL)
     {
@@ -583,3 +583,4 @@ int isValidChar(char charRecibido)
         retorno=0;
     return retorno;
 }
+

@@ -25,6 +25,21 @@ int initEmployees(Employee* list, int len)
 	    return retorno;
 }
 
+int existEmployees(Employee* list, int len)
+{
+	int ret = -1;
+    int i;
+
+    for( i = 0; i < len; i++)
+    {
+        if(list[i].isEmpty == 0)
+        {
+            ret = 0;
+        }
+    }
+    return ret;
+}
+
 //-------------------------------------------------------------------------------------------------------------------------------
 
 int addEmployee(Employee* list, int len, int id, char name[],char lastName[],float salary,int sector)
@@ -32,7 +47,7 @@ int addEmployee(Employee* list, int len, int id, char name[],char lastName[],flo
 	int retorno = -1;
 	if(list!=NULL && len>0 && id>0 && name!=NULL && lastName!=NULL && salary>0 && sector>0)
 	{
-
+		//I add [id] so that in that position all the data is loaded. I use it as a position
 		list[id].id = id;
 	    strcpy(list[id].name, name);
 	    strcpy(list[id].lastName, lastName);
@@ -67,7 +82,7 @@ int loadEmployee(Employee* list,int len,int* idCont)
 			auxId = *idCont;
 			utn_getTexto("\nEnter name: ","\nError",1,51,3,auxName);
 			utn_getTexto("\nEnter last name: ","\nError",1,51,3,auxLastName);
-			utn_getFloat("\nEnter salary: ","\nError",1,sizeof(float),1,100000,3,&auxSalary);
+			utn_getFloat("\nEnter salary: ","\nError",1,150000,1,120000,3,&auxSalary);
 			utn_getUnsignedInt("\nEnter sector: ","\nError",1,sizeof(int),1,10,3,&auxSector);
 
 			addEmployee(list,len,auxId,auxName,auxLastName,auxSalary,auxSector);
@@ -127,7 +142,7 @@ int modifyEmployee(Employee* list, int len)
 	    char opcion;
 	    if(list!=NULL && len>0)
 	    {
-	        utn_getUnsignedInt("\nEmployee ID to modify: ","\nError",1,sizeof(int),1,len,1,&id);
+	        utn_getUnsignedInt("\nEmployee ID to modify: ","\nError",1,sizeof(int),1,len,3,&id);
 	        if(findEmployeeById(list,len,id,&posicion)==-1)
 	        {
 	            printf("\nThere is no such Id");
@@ -146,7 +161,7 @@ int modifyEmployee(Employee* list, int len)
 	                    	utn_getTexto("\nEnter new last name: ","\nError",1,51,3,list[posicion].lastName);
 	                        break;
 	                    case 'C':
-	                    	utn_getFloat("\nEnter new salary: ","\nError",1,sizeof(float),0,1,100000,&list[posicion].salary);
+	                    	utn_getFloat("\nEnter new salary: ","\nError",1,150000,1,120000,3,&list[posicion].salary);
 	                        break;
 	                    case 'D':
 	                    	utn_getUnsignedInt("\nEnter new sector: ","\nError",1,sizeof(int),1,10,3,&list[posicion].sector);;
@@ -262,20 +277,19 @@ int printEmployees(Employee* list, int length)
 	    int i;
 	    if(list!=NULL && length>=0)
 	    {
+	    	printf("******************************************************************************\nID\tLast Name\t\t\tName\t\tSalary\t\tSector\n******************************************************************************");
 	        for(i=0;i<length;i++)
 	        {
 	            if(list[i].isEmpty==1)
 	                continue;
 	            else
-	            	printf("\n**************************************\nID: %d\nLast name: %s\nSector: %d\n",
-	            			list[i].id,list[i].lastName,list[i].sector);
+	            	printf("\n%d\t%s\t\t\t%s\t\t%.2f\t\t%d",list[i].id,list[i].lastName,list[i].name,list[i].salary,list[i].sector);
 	        }
 	        retorno=0;
 	    }
 	    return retorno;
 
 }
-
 
 int salaryReport(Employee* list,int len)
 {
@@ -327,7 +341,7 @@ int report(Employee* list, int len)
 	{
 		while (option != 3)
 		{
-			utn_getUnsignedInt("\n1-List of employees alphabetically by Last Name and Sector\n2-Total and average wages, and how many employees exceed the average wage\n3-Exit\nSelect the option: ",
+			utn_getUnsignedInt("\n\n1-List of employees alphabetically by Last Name and Sector\n2-Total and average wages, and how many employees exceed the average wage\n3-Exit\nSelect the option: ",
 				"\nError\n",1,sizeof(int),1,5,3,&option);
 			switch(option)
 			{

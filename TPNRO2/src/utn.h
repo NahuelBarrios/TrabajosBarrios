@@ -44,4 +44,5 @@ int utn_getChar(char* msg, char* msgError, int min, int max, int reintentos, cha
 int isValidChar(char charRecibido);
 
 
+
 #endif /* UTN_H_ */

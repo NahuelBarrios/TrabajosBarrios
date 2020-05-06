@@ -15,8 +15,8 @@
 #include "utn.h"
 #define QTY_EMPLOYEE 1000
 
-int main(void) {
-
+int main(void)
+{
 	setbuf(stdout,NULL);
 
 
@@ -36,19 +36,36 @@ int main(void) {
 			loadEmployee(arrayEmployee,QTY_EMPLOYEE,&idEmployee);
 			break;
 		case 2:
-			modifyEmployee(arrayEmployee,QTY_EMPLOYEE);
+			if(existEmployees(arrayEmployee,QTY_EMPLOYEE) == 0)
+			{
+				printEmployees(arrayEmployee,QTY_EMPLOYEE);
+				modifyEmployee(arrayEmployee,QTY_EMPLOYEE);
+			}
+			else
+				printf("\nYou must load at least one employee before entering this option!\n");
 		break;
 		case 3:
+			if(existEmployees(arrayEmployee,QTY_EMPLOYEE) == 0)
+			{
 			utn_getUnsignedInt("\nID to cancel: ","\nError",1,sizeof(int),1,QTY_EMPLOYEE,3,&searchId);
 			removeEmployee(arrayEmployee,QTY_EMPLOYEE,searchId);
+			}
+			else
+				printf("\nYou must load at least one employee before entering this option!\n");
 			break;
 		case 4:
+			if(existEmployees(arrayEmployee,QTY_EMPLOYEE) == 0)
 			report(arrayEmployee,QTY_EMPLOYEE);
+			else
+				printf("\nYou must load at least one employee before entering this option!\n");
 			break;
 			case 5:
 			printf("\nThanks, come back soon!\n");
 			break;
-		}
+
+			default:
+				printf("\nEnter the options displayed by the menu\n");
+		}//switch
 
 
 	}//while
