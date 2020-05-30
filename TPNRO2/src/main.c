@@ -23,6 +23,12 @@ int main(void)
 	Employee arrayEmployee[QTY_EMPLOYEE];
 	initEmployees(arrayEmployee,QTY_EMPLOYEE);
 
+	addEmployee(arrayEmployee,QTY_EMPLOYEE,1,"Nahuel","Barrios",12000,4);
+	addEmployee(arrayEmployee,QTY_EMPLOYEE,2,"Candelaria","Scanavino",10000,1);
+	addEmployee(arrayEmployee,QTY_EMPLOYEE,3,"Walter","Barrios",15000,3);
+	addEmployee(arrayEmployee,QTY_EMPLOYEE,4,"Lucas","Balmaceda",10000,4);
+	addEmployee(arrayEmployee,QTY_EMPLOYEE,5,"Federico","Scanavino",12000,6);
+
 	int option;
 	int idEmployee = 0;
 	int searchId;

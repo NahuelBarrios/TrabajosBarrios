@@ -1,2 +1,19 @@
-Info: Nothing to build for TPNRO2
-Info: Nothing to build for TPNRO2
+16:15:00 **** Rebuild of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Employee.o "..\\Employee.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o utn.o "..\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+16:15:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:45:22: warning: too many arguments for format [-Wformat-extra-args]
+   45 |               printf("hola",*(listaEmpleados+i));
+      |                      ^~~~~~
+..\main.c:45:45: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   45 |               printf("hola",*(listaEmpleados+i));
+      |                                             ^
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
