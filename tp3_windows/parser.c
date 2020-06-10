@@ -33,6 +33,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee,int* id
 			if(empleado!=NULL)
 			{
 				ll_add(pArrayListEmployee,empleado);
+
 				retorno = 0;
 			}
 			else

@@ -43,8 +43,7 @@ int main()
      \n9. Guardar los datos de los empleados en el archivo data.csv (modo binario).\
     \n10. Salir\
 \n*****************************************************/");
-    	printf("Option:");
-    	scanf("%d",&option);
+    	utn_getInt(&option,"\nElija una opcion: ","\nError",1,10,3);
 
         switch(option)
         {
@@ -57,14 +56,18 @@ int main()
             		}
             		else
             			printf("\nError al cargar");
-
-
                 break;
             case 3:
             	if(controller_addEmployee(listaEmpleados,idSave)==0)
 				{
             		idSave++;
 				}
+            	break;
+            case 4:
+            	controller_editEmployee(listaEmpleados);
+            	break;
+            case 5:
+            	controller_removeEmployee(listaEmpleados);
             	break;
             case 6:
             	controller_ListEmployee(listaEmpleados);

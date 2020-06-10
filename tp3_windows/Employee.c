@@ -23,7 +23,7 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
 {
 	Employee* empleado = employee_new(); // Le asigno puntero del array el nuevo espacio
 
-	if(empleado != NULL)
+	if(empleado != NULL  && idStr!=NULL && nombreStr!=NULL && horasTrabajadasStr!=NULL && sueldo!=NULL)
 	{
 		employee_setId(empleado,atoi(idStr)); // cargo los datos llamando la funcion set. transformandolos de char a enteros a traves del atoi
 		employee_setNombre(empleado,nombreStr);
@@ -111,7 +111,7 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 
 		if(this!=NULL && horasTrabajadas!= NULL)
 		{
-			*horasTrabajadas = this->id;
+			*horasTrabajadas = this->horasTrabajadas;
 			retorno = 0;
 		}
 		return retorno;
@@ -137,7 +137,7 @@ int employee_getSueldo(Employee* this,int* sueldo)
 
 	if(this!=NULL && sueldo!= NULL)
 	{
-		*sueldo = this->id;
+		*sueldo = this->sueldo;
 		retorno = 0;
 	}
 	return retorno;

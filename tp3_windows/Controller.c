@@ -81,7 +81,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee,int id)
 						employee_setNombre(empleado,bufferNombre)==0 &&
 						employee_setSueldo(empleado,bufferSueldo)==0 &&
 						employee_setHorasTrabajadas(empleado,bufferHoras)==0)
-						{
+				{
 							if(ll_add(pArrayListEmployee,empleado)==0)
 							{
 								printf("\nEmpleado cargado\n");
@@ -92,11 +92,12 @@ int controller_addEmployee(LinkedList* pArrayListEmployee,int id)
 								employee_delete(empleado);
 								printf("\nError al agregar empleado\n");
 							}
-						}
+				}
 
 	    	}
 	return retorno;
 }
+
 
 /** \brief Modificar datos de empleado
  *
@@ -108,10 +109,68 @@ int controller_addEmployee(LinkedList* pArrayListEmployee,int id)
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
 	int retorno = -1;
+	Employee* empleado;
+	int bufferId;
+	int auxBufferId;
+	char bufferNombre[50];
+	int bufferHoras;
+	int bufferSueldo;
+	int i;
+	int len;
+	int option = 0;
 
 
+	if(pArrayListEmployee != NULL)
+	{
+		utn_getInt(&auxBufferId,"\nId de empleado a modificar: ","\nError",1,1000000,3);
+		len = ll_len(pArrayListEmployee);
 
-    return retorno;
+		for(i=0;i<len;i++)
+		{
+			empleado = (Employee*)ll_get(pArrayListEmployee,i);
+			employee_getId(empleado,&bufferId);
+
+			if(bufferId != auxBufferId)
+				continue;
+					else
+					{
+						employee_getSueldo(empleado,&bufferSueldo);
+						employee_getHorasTrabajadas(empleado,&bufferHoras);
+						employee_getNombre(empleado,bufferNombre);
+						printf("\nId\t\tNombre\tHoras\tSueldo\n");
+						printf("%d\t\t%s\t%d\t%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
+
+						while(option!=4)
+						{
+							utn_getInt(&option,"\nModificar:\n1-Nombre\n2-Sueldo\n3-Cantidad de horas\n4-No desea modificar nada.\nElija una opcion: ","\nError",1,4,3);
+
+							switch(option)
+							{
+							case 1:
+								fflush(stdin);
+								utn_getName("\nIngrese el nombre: ","\nError",1,50,2,bufferNombre);
+								employee_setNombre(empleado,bufferNombre);
+								break;
+							case 2:
+								utn_getInt(&bufferSueldo,"\nIngrese el sueldo: ","\nError",1,9999,2);
+								employee_setSueldo(empleado,bufferSueldo);
+								break;
+							case 3:
+								utn_getInt(&bufferHoras,"\nIngrese cantidad de horas: ","\nError",1,9999,2);
+								employee_setHorasTrabajadas(empleado,bufferHoras);
+								break;
+							case 4:
+								printf("\nSalió\n");
+								break;
+							default: printf("\nIngrese una opcion valida!\n");
+
+							}//switch
+						}//while
+					}//else
+				}//for
+				retorno=0;
+			}//if
+	return retorno;
 }
 
 /** \brief Baja de empleado
@@ -123,7 +182,58 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+	int retorno = -1;
+	Employee* empleado;
+	int bufferId;
+	int auxBufferId;
+	char bufferNombre[50];
+	int bufferHoras;
+	int bufferSueldo;
+	int i;
+	int len;
+	int option = 0;
+
+	if(pArrayListEmployee != NULL)
+	{
+		utn_getInt(&auxBufferId,"\nId de empleado a eliminar: ","\nError",1,1000000,3);
+		len = ll_len(pArrayListEmployee);
+
+		for(i=0;i<len;i++)
+		{
+			empleado = (Employee*)ll_get(pArrayListEmployee,i);
+			employee_getId(empleado,&bufferId);
+
+			if(bufferId != auxBufferId)
+				continue;
+			else
+			{
+				employee_getSueldo(empleado,&bufferSueldo);
+				employee_getHorasTrabajadas(empleado,&bufferHoras);
+				employee_getNombre(empleado,bufferNombre);
+				printf("\nId\t\tNombre\tHoras\tSueldo\n");
+				printf("%d\t\t%s\t%d\t%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
+
+				while(option != 2)
+				{
+					utn_getInt(&option,"\nEsta seguro que desea eliminar este empleado?\n1-Eliminar\n2-No eliminar\nElija una opcion: ","\nError",1,10,3);
+					switch(option)
+					{
+					case 1:
+						ll_remove(pArrayListEmployee,i);
+						printf("\nSe eliminó el empleado.\n");
+						break;
+					case 2:
+						printf("\nSalió\n");
+						break;
+					default: printf("\nIngrese una opcion valida\n");
+					}//switch
+				}//While
+
+			}//else
+		}//for
+	retorno = 0;
+	}//if
+    return retorno;
 }
 
 /** \brief Listar empleados
@@ -138,29 +248,40 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 	 int retorno=-1;
 	    int len;
 	    int i;
-	    int id;
-	    int sueldo;
-	    char nombre[50];
-	    int horas;
+	    int bufferId;
+	    int bufferSueldo;
+	    char bufferNombre[50];
+	    int bufferHoras;
 	    Employee* bufferEmployee;
 	    if(pArrayListEmployee != NULL)
 	    {
 	        len=ll_len(pArrayListEmployee);
+	        printf("\nId\t\tNombre\tHoras\tSueldo\n");
 	        for(i=0;i<len;i++)
 	        {
 	            bufferEmployee=(Employee*)ll_get(pArrayListEmployee,i);
 	            if(bufferEmployee!=NULL)
 	            {
-	            	employee_getId(bufferEmployee,&id);
-	            	employee_getSueldo(bufferEmployee,&sueldo);
-	            	employee_getHorasTrabajadas(bufferEmployee,&horas);
-	            	employee_getNombre(bufferEmployee,nombre);
-	            	printf("%d,%s,%d,%d\n",id,nombre,horas,sueldo);
+	            	employee_getId(bufferEmployee,&bufferId);
+	            	employee_getSueldo(bufferEmployee,&bufferSueldo);
+	            	employee_getHorasTrabajadas(bufferEmployee,&bufferHoras);
+	            	employee_getNombre(bufferEmployee,bufferNombre);
+	            	printf("%d\t\t%s\t%d\t%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
 	            }
 	        }
 	        retorno=0;
 	    }
 	    return retorno;
+}
+
+
+int order_byId(void* pUno,void* pDos)
+{
+	int retorno = -1;
+
+
+
+	return retorno;
 }
 
 /** \brief Ordenar empleados
@@ -172,7 +293,8 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+
+	return 0;
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
