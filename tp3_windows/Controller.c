@@ -3,7 +3,7 @@
 #include "LinkedList.h"
 #include "Employee.h"
 #include "utn.h"
-
+#include "parser.h"
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
  *
@@ -12,10 +12,34 @@
  * \return int
  *
  */
-int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
+int controller_loadFromText(char* path , LinkedList* pArrayListEmployee,int* idSave)
 {
-    return 1;
+	FILE*pArchivo;
+		int retorno=-1;
+		if(path != NULL && pArrayListEmployee != NULL)
+		{
+		   pArchivo=fopen(path,"r");
+		   if(pArchivo != NULL)
+		   {
+		      if(parser_EmployeeFromText(pArchivo,pArrayListEmployee,idSave)==0)
+		      {
+		    	  fclose(pArchivo);
+		    	  retorno=0;
+		      }
+		      else
+		      {
+		    	  printf("\nNo se pudo cargar la lista");
+		      }
+
+		   }
+		   else
+		   {
+		      printf("\nNo se pudo abrir el archivo...");
+		   }
+		}
+	    return retorno;
 }
+
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
  *
@@ -36,41 +60,42 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_addEmployee(LinkedList* pArrayListEmployee)
+int controller_addEmployee(LinkedList* pArrayListEmployee,int id)
 {
-	Employee* this;
-	int retorno = -1;
-	int auxId;
-	char auxNombre[128];
-	int auxHorasTrabajadas;
-	int auxSueldo;
+	int retorno=-1;
+	Employee* empleado;
+	char bufferNombre[50];
+	int bufferHoras;
+	int bufferSueldo;
+	int bufferId;
+	if(pArrayListEmployee!=NULL)
+	    	{
+				fflush(stdin);
+				utn_getTexto("\nIngrese el nombre: ","\nError",1,50,3,bufferNombre);
+				utn_getInt(&bufferHoras,"Horas trabajadas: ","\nError",1,1000000,3);
+				utn_getInt(&bufferSueldo,"Sueldo: ","\nError",1,1000000,3);
+				bufferId = id;
+				empleado=employee_new();
 
-	if(pArrayListEmployee != NULL)
-	{
-		this = employee_new();
+				if(empleado != NULL && employee_setId(empleado,bufferId)==0 &&
+						employee_setNombre(empleado,bufferNombre)==0 &&
+						employee_setSueldo(empleado,bufferSueldo)==0 &&
+						employee_setHorasTrabajadas(empleado,bufferHoras)==0)
+						{
+							if(ll_add(pArrayListEmployee,empleado)==0)
+							{
+								printf("\nEmpleado cargado\n");
+								retorno = 0;
+							}
+							else
+							{
+								employee_delete(empleado);
+								printf("\nError al agregar empleado\n");
+							}
+						}
 
-		utn_getTexto("\nIngrese el nombre ","\nError",1,51,3,auxNombre);
-		utn_getUnsignedInt("\nIngrese las horas trabajadas:","\nError",1,110000,1,100000,3,&auxHorasTrabajadas);
-		utn_getUnsignedInt("\nIngrese el sueldo:","\nError",1,110000,1,100000,3,&auxSueldo);
-
-		auxId = employee_generoId();
-
-		if(this != NULL && !employee_setId(this,auxId) && !employee_setNombre(this,auxNombre) && !employee_setHorasTrabajadas(this,auxHorasTrabajadas)&& !employee_setSueldo(this,auxSueldo))
-		{
-			if(!ll_add(pArrayListEmployee,this))
-			{
-				printf("\nSe cargo el empleado\n");
-				retorno = 0;
-			}
-			else
-			{
-				printf("\nError al agregar el empleado.\n");
-			}
-
-		}
-
-	}
-    return retorno;
+	    	}
+	return retorno;
 }
 
 /** \brief Modificar datos de empleado
@@ -82,7 +107,11 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+	int retorno = -1;
+
+
+
+    return retorno;
 }
 
 /** \brief Baja de empleado
@@ -106,7 +135,32 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
-    return 1;
+	 int retorno=-1;
+	    int len;
+	    int i;
+	    int id;
+	    int sueldo;
+	    char nombre[50];
+	    int horas;
+	    Employee* bufferEmployee;
+	    if(pArrayListEmployee != NULL)
+	    {
+	        len=ll_len(pArrayListEmployee);
+	        for(i=0;i<len;i++)
+	        {
+	            bufferEmployee=(Employee*)ll_get(pArrayListEmployee,i);
+	            if(bufferEmployee!=NULL)
+	            {
+	            	employee_getId(bufferEmployee,&id);
+	            	employee_getSueldo(bufferEmployee,&sueldo);
+	            	employee_getHorasTrabajadas(bufferEmployee,&horas);
+	            	employee_getNombre(bufferEmployee,nombre);
+	            	printf("%d,%s,%d,%d\n",id,nombre,horas,sueldo);
+	            }
+	        }
+	        retorno=0;
+	    }
+	    return retorno;
 }
 
 /** \brief Ordenar empleados

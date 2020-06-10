@@ -1,19 +1,40 @@
-16:15:00 **** Rebuild of configuration Debug for project tp3_windows ****
+21:35:41 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Employee.o "..\\Employee.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o utn.o "..\\utn.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
-16:15:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+21:38:25 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-..\main.c: In function 'main':
-..\main.c:45:22: warning: too many arguments for format [-Wformat-extra-args]
-   45 |               printf("hola",*(listaEmpleados+i));
-      |                      ^~~~~~
-..\main.c:45:45: warning: 'i' may be used uninitialized in this function [-Wmaybe-uninitialized]
-   45 |               printf("hola",*(listaEmpleados+i));
-      |                                             ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controller_addEmployee':
+..\Controller.c:112:43: warning: implicit declaration of function 'employee_buscarMaxId' [-Wimplicit-function-declaration]
+  112 |                  employee_setId(empleado,(employee_buscarMaxId(pArrayListEmployee)+1))==0 && employee_setSueldo(empleado,bufferSueldo)==0 &&
+      |                                           ^~~~~~~~~~~~~~~~~~~~
+..\Controller.c: At top level:
+..\Controller.c:126:1: error: expected identifier or '(' before '}' token
+  126 | }
+      | ^
+21:40:42 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c:128:1: error: expected identifier or '(' before '}' token
+  128 | }
+      | ^
+21:40:58 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:41:02 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+21:42:53 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status

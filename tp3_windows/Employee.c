@@ -6,28 +6,31 @@
 
 Employee* employee_new()
 {
-	return (Employee*)malloc(sizeof(Employee));
+	Employee* empleado = (Employee*)malloc( sizeof(Employee)); // pido el espacio de memoria
+
+		if(empleado != NULL) // valido que no sea NULL
+		{
+			empleado->id = 0; // CARGO TODOS LOS VALORES EN 0, asi no tienen basura dentro
+			strcpy(empleado->nombre, "");
+			empleado->horasTrabajadas = 0;
+			empleado->sueldo = 0;
+		}
+
+	return empleado;
 }
 
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldo)
 {
-	Employee* this;
-	int idAux;
-	int horasTrabajadasAux;
-	int sueldoAux;
-	this = employee_new();
-	  if(this!=NULL)
-	  {
-		  idAux = atoi(idStr);
-		  horasTrabajadasAux = atoi(horasTrabajadasStr);
-		  sueldoAux = atoi(sueldo);
+	Employee* empleado = employee_new(); // Le asigno puntero del array el nuevo espacio
 
-		  this->id=idAux;
-		  strcpy(this->nombre,nombreStr);
-		  this->horasTrabajadas=horasTrabajadasAux;
-		  this->sueldo=sueldoAux;
-	  }
-	  return 0;
+	if(empleado != NULL)
+	{
+		employee_setId(empleado,atoi(idStr)); // cargo los datos llamando la funcion set. transformandolos de char a enteros a traves del atoi
+		employee_setNombre(empleado,nombreStr);
+		employee_setHorasTrabajadas(empleado,atoi(horasTrabajadasStr));
+		employee_setSueldo(empleado,atoi(sueldo));
+	}
+return empleado; // Retorno el empleado
 }
 
 void employee_delete(Employee* this)
@@ -54,19 +57,12 @@ int employee_getId(Employee* this,int* id)
 {
 	int retorno = -1;
 
-		if(this!=NULL && id>=0)
+		if(this!=NULL && id!= NULL)
 		{
 			*id = this->id;
 			retorno = 0;
 		}
 		return retorno;
-}
-
-static int autoGenerateId = 0;
-
-int employee_generoId()
-{
-	return autoGenerateId++;
 }
 
 //*******************************************************************************************************************************
@@ -113,7 +109,7 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas)
 {
 	int retorno = -1;
 
-		if(this!=NULL && horasTrabajadas>0)
+		if(this!=NULL && horasTrabajadas!= NULL)
 		{
 			*horasTrabajadas = this->id;
 			retorno = 0;
@@ -139,10 +135,12 @@ int employee_getSueldo(Employee* this,int* sueldo)
 {
 	int retorno = -1;
 
-	if(this!=NULL && sueldo>0)
+	if(this!=NULL && sueldo!= NULL)
 	{
 		*sueldo = this->id;
 		retorno = 0;
 	}
 	return retorno;
 }
+
+//*******************************************************************************************************************************

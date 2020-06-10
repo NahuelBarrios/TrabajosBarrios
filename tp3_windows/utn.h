@@ -43,6 +43,6 @@ int isValidAlphanumeric(char* stringRecibido);
 int utn_getChar(char* msg, char* msgError, int min, int max, int reintentos, char* resultado);
 int isValidChar(char charRecibido);
 
-
+int utn_getInt(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
 
 #endif /* UTN_H_ */

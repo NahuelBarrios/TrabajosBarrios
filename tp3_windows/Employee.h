@@ -14,7 +14,6 @@ void employee_delete(Employee* this);
 
 int employee_setId(Employee* this,int id);
 int employee_getId(Employee* this,int* id);
-int employee_generoId();
 
 int employee_setNombre(Employee* this,char* nombre);
 int employee_getNombre(Employee* this,char* nombre);
@@ -24,5 +23,6 @@ int employee_getHorasTrabajadas(Employee* this,int* horasTrabajadas);
 
 int employee_setSueldo(Employee* this,int sueldo);
 int employee_getSueldo(Employee* this,int* sueldo);
+
 
 #endif // employee_H_INCLUDED
