@@ -331,3 +331,297 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
 Info: Nothing to build for tp3_windows
+19:56:02 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controller_saveAsText':
+..\Controller.c:319:8: warning: variable 'pArchivo' set but not used [-Wunused-but-set-variable]
+  319 |  FILE* pArchivo;
+      |        ^~~~~~~~
+..\Controller.c:317:6: warning: variable 'len' set but not used [-Wunused-but-set-variable]
+  317 |  int len;
+      |      ^~~
+..\Controller.c:316:6: warning: unused variable 'i' [-Wunused-variable]
+  316 |  int i;
+      |      ^
+..\Controller.c:315:6: warning: unused variable 'bufferSueldo' [-Wunused-variable]
+  315 |  int bufferSueldo;
+      |      ^~~~~~~~~~~~
+..\Controller.c:314:6: warning: unused variable 'bufferHoras' [-Wunused-variable]
+  314 |  int bufferHoras;
+      |      ^~~~~~~~~~~
+..\Controller.c:313:7: warning: unused variable 'bufferNombre' [-Wunused-variable]
+  313 |  char bufferNombre[50];
+      |       ^~~~~~~~~~~~
+..\Controller.c:312:6: warning: unused variable 'auxBufferId' [-Wunused-variable]
+  312 |  int auxBufferId;
+      |      ^~~~~~~~~~~
+..\Controller.c:311:6: warning: unused variable 'bufferId' [-Wunused-variable]
+  311 |  int bufferId;
+      |      ^~~~~~~~
+..\Controller.c:310:12: warning: unused variable 'empleado' [-Wunused-variable]
+  310 |  Employee* empleado;
+      |            ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:87:62: error: expected ';' before '}' token
+   87 |             default: printf("\nIngrese un valor del menú.\n")
+      |                                                              ^
+      |                                                              ;
+   88 |         }
+      |         ~                                                     
+19:56:23 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+20:17:39 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+20:22:52 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controller_saveAsText':
+..\Controller.c:312:6: warning: unused variable 'auxBufferId' [-Wunused-variable]
+  312 |  int auxBufferId;
+      |      ^~~~~~~~~~~
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+20:24:57 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+20:27:55 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+21:30:38 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+21:31:53 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:31:57 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+21:36:01 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:36:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+21:37:46 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:59:70: error: 'idSaveBin' undeclared (first use in this function); did you mean 'idSave'?
+   59 |              if(controller_loadFromBinary("data.csv",listaEmpleados,&idSaveBin)==0)
+      |                                                                      ^~~~~~~~~
+      |                                                                      idSave
+..\main.c:59:70: note: each undeclared identifier is reported only once for each function it appears in
+21:37:55 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:61:15: error: 'idSaveBin' undeclared (first use in this function); did you mean 'idSave'?
+   61 |               idSaveBin++;
+      |               ^~~~~~~~~
+      |               idSave
+..\main.c:61:15: note: each undeclared identifier is reported only once for each function it appears in
+21:38:14 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+21:38:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+21:40:04 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Command canceled
+21:40:06 **** Rebuild of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Employee.o "..\\Employee.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o utn.o "..\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+22:16:55 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+19:18:33 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'order_byId':
+..\Controller.c:309:23: warning: passing argument 2 of 'employee_getId' makes pointer from integer without a cast [-Wint-conversion]
+  309 |  employee_getId(thisA,idA);
+      |                       ^~~
+      |                       |
+      |                       int
+In file included from ..\Controller.c:4:
+..\Employee.h:16:40: note: expected 'int *' but argument is of type 'int'
+   16 | int employee_getId(Employee* this,int* id);
+      |                                   ~~~~~^~
+..\Controller.c:310:23: warning: passing argument 2 of 'employee_getId' makes pointer from integer without a cast [-Wint-conversion]
+  310 |  employee_getId(thisB,idB);
+      |                       ^~~
+      |                       |
+      |                       int
+In file included from ..\Controller.c:4:
+..\Employee.h:16:40: note: expected 'int *' but argument is of type 'int'
+   16 | int employee_getId(Employee* this,int* id);
+      |                                   ~~~~~^~
+..\Controller.c:304:6: warning: unused variable 'retorno' [-Wunused-variable]
+  304 |  int retorno = -1;
+      |      ^~~~~~~
+..\Controller.c:309:2: warning: 'idA' is used uninitialized in this function [-Wuninitialized]
+  309 |  employee_getId(thisA,idA);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c:310:2: warning: 'idB' is used uninitialized in this function [-Wuninitialized]
+  310 |  employee_getId(thisB,idB);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+19:18:59 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'order_byId':
+..\Controller.c:307:6: error: redefinition of 'Order'
+  307 |  int Order=-1;
+      |      ^~~~~
+..\Controller.c:304:6: note: previous definition of 'Order' was here
+  304 |  int Order = -1;
+      |      ^~~~~
+..\Controller.c:309:23: warning: passing argument 2 of 'employee_getId' makes pointer from integer without a cast [-Wint-conversion]
+  309 |  employee_getId(thisA,idA);
+      |                       ^~~
+      |                       |
+      |                       int
+In file included from ..\Controller.c:4:
+..\Employee.h:16:40: note: expected 'int *' but argument is of type 'int'
+   16 | int employee_getId(Employee* this,int* id);
+      |                                   ~~~~~^~
+..\Controller.c:310:23: warning: passing argument 2 of 'employee_getId' makes pointer from integer without a cast [-Wint-conversion]
+  310 |  employee_getId(thisB,idB);
+      |                       ^~~
+      |                       |
+      |                       int
+In file included from ..\Controller.c:4:
+..\Employee.h:16:40: note: expected 'int *' but argument is of type 'int'
+   16 | int employee_getId(Employee* this,int* id);
+      |                                   ~~~~~^~
+19:19:07 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'order_byId':
+..\Controller.c:308:23: warning: passing argument 2 of 'employee_getId' makes pointer from integer without a cast [-Wint-conversion]
+  308 |  employee_getId(thisA,idA);
+      |                       ^~~
+      |                       |
+      |                       int
+In file included from ..\Controller.c:4:
+..\Employee.h:16:40: note: expected 'int *' but argument is of type 'int'
+   16 | int employee_getId(Employee* this,int* id);
+      |                                   ~~~~~^~
+..\Controller.c:309:23: warning: passing argument 2 of 'employee_getId' makes pointer from integer without a cast [-Wint-conversion]
+  309 |  employee_getId(thisB,idB);
+      |                       ^~~
+      |                       |
+      |                       int
+In file included from ..\Controller.c:4:
+..\Employee.h:16:40: note: expected 'int *' but argument is of type 'int'
+   16 | int employee_getId(Employee* this,int* id);
+      |                                   ~~~~~^~
+..\Controller.c:308:2: warning: 'idA' is used uninitialized in this function [-Wuninitialized]
+  308 |  employee_getId(thisA,idA);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c:309:2: warning: 'idB' is used uninitialized in this function [-Wuninitialized]
+  309 |  employee_getId(thisB,idB);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+19:19:34 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+19:21:48 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+19:38:40 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+20:02:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+20:19:09 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+20:20:15 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+20:34:34 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\Nahu_\\OneDrive\\Escritorio\\TrabajosACA\\tp3_windows" -o tp3_windows.exe Controller.o Employee.o main.o parser.o utn.o -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows

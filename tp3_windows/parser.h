@@ -10,6 +10,6 @@
 
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee,int* idSave);
 
-int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee);
+int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee,int* idSaveBin);
 
 #endif /* PARSER_H_ */

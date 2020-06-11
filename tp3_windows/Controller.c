@@ -14,30 +14,30 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee,int* idSave)
 {
-	FILE*pArchivo;
-		int retorno=-1;
-		if(path != NULL && pArrayListEmployee != NULL)
+	FILE* pArchivo;
+	int retorno=-1;
+	if(path != NULL && pArrayListEmployee != NULL)
+	{
+		pArchivo=fopen(path,"r");
+		if(pArchivo != NULL)
 		{
-		   pArchivo=fopen(path,"r");
-		   if(pArchivo != NULL)
-		   {
-		      if(parser_EmployeeFromText(pArchivo,pArrayListEmployee,idSave)==0)
-		      {
-		    	  fclose(pArchivo);
-		    	  retorno=0;
-		      }
-		      else
-		      {
-		    	  printf("\nNo se pudo cargar la lista");
-		      }
+			if(parser_EmployeeFromText(pArchivo,pArrayListEmployee,idSave)==0)
+			{
+				fclose(pArchivo);
+				retorno=0;
+			}
+			else
+			{
+				printf("\nNo se pudo cargar la lista");
+			}
 
-		   }
-		   else
-		   {
-		      printf("\nNo se pudo abrir el archivo...");
-		   }
 		}
-	    return retorno;
+		else
+		{
+			printf("\nNo se pudo abrir el archivo...");
+		}
+	}
+	return retorno;
 }
 
 
@@ -48,9 +48,33 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee,int* idS
  * \return int
  *
  */
-int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
+int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee,int* idSaveBin)
 {
-    return 1;
+
+	FILE* pArchivoBinario;
+	int retorno=-1;
+	if(path != NULL && pArrayListEmployee != NULL)
+	{
+		pArchivoBinario=fopen(path,"rb");
+		if(pArchivoBinario != NULL)
+		{
+			if(parser_EmployeeFromText(pArchivoBinario,pArrayListEmployee,idSaveBin)==0)
+			{
+				fclose(pArchivoBinario);
+				retorno=0;
+			}
+			else
+			{
+				printf("\nNo se pudo cargar la lista");
+			}
+
+		}
+		else
+		{
+			printf("\nNo se pudo abrir el archivo...");
+		}
+	}
+	return retorno;
 }
 
 /** \brief Alta de empleados
@@ -213,8 +237,6 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 				printf("\nId\t\tNombre\tHoras\tSueldo\n");
 				printf("%d\t\t%s\t%d\t%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
 
-				while(option != 2)
-				{
 					utn_getInt(&option,"\nEsta seguro que desea eliminar este empleado?\n1-Eliminar\n2-No eliminar\nElija una opcion: ","\nError",1,10,3);
 					switch(option)
 					{
@@ -227,7 +249,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 						break;
 					default: printf("\nIngrese una opcion valida\n");
 					}//switch
-				}//While
+
 
 			}//else
 		}//for
@@ -252,20 +274,20 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 	    int bufferSueldo;
 	    char bufferNombre[50];
 	    int bufferHoras;
-	    Employee* bufferEmployee;
+	    Employee* empleado;
 	    if(pArrayListEmployee != NULL)
 	    {
 	        len=ll_len(pArrayListEmployee);
 	        printf("\nId\t\tNombre\tHoras\tSueldo\n");
 	        for(i=0;i<len;i++)
 	        {
-	            bufferEmployee=(Employee*)ll_get(pArrayListEmployee,i);
-	            if(bufferEmployee!=NULL)
+	        	empleado=(Employee*)ll_get(pArrayListEmployee,i);
+	            if(empleado!=NULL)
 	            {
-	            	employee_getId(bufferEmployee,&bufferId);
-	            	employee_getSueldo(bufferEmployee,&bufferSueldo);
-	            	employee_getHorasTrabajadas(bufferEmployee,&bufferHoras);
-	            	employee_getNombre(bufferEmployee,bufferNombre);
+	            	employee_getId(empleado,&bufferId);
+	            	employee_getSueldo(empleado,&bufferSueldo);
+	            	employee_getHorasTrabajadas(empleado,&bufferHoras);
+	            	employee_getNombre(empleado,bufferNombre);
 	            	printf("%d\t\t%s\t%d\t%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
 	            }
 	        }
@@ -275,13 +297,21 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 }
 
 
-int order_byId(void* pUno,void* pDos)
+int order_byId(void* thisA,void* thisB)
 {
-	int retorno = -1;
+	int Order = -1;
+	int idA;
+	int idB;
 
+	employee_getId(thisA,&idA);
+	employee_getId(thisB,&idB);
 
+	if(idA>idB)
+	{
+		Order = 1;
+	}
 
-	return retorno;
+	return Order;
 }
 
 /** \brief Ordenar empleados
@@ -293,8 +323,33 @@ int order_byId(void* pUno,void* pDos)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+	int retorno = -1;
+	int option=0;
 
-	return 0;
+	if(pArrayListEmployee != NULL)
+	{
+		while(option != 3)
+		{
+			utn_getInt(&option,"\nOrdenamiento:\n1-Por id Ascendente\n2-Por id Descendente\n3-Salir\nElija una opcion: ","\nError",1,10,3);
+			switch(option)
+			{
+			case 1:
+				ll_sort(pArrayListEmployee,order_byId,1); // order_byId. Le paso la direccion de memora de la funcion.
+				printf("\nOrdenado de forma ascendente correctamente\n");
+				break;
+			case 2:
+				ll_sort(pArrayListEmployee,order_byId,0); // order_byId. Le paso la direccion de memora de la funcion.
+				printf("\nOrdenado de forma descendente correctamente\n");
+				break;
+			case 3:
+				printf("\nSalió.\n");
+				break;
+			default: printf("\nIngrese una opcion valida.\n");
+
+			}
+		}
+	}
+	return retorno;
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
@@ -306,7 +361,44 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+	int retorno = -1;
+	Employee* empleado = NULL;
+	int bufferId;
+	char bufferNombre[50];
+	int bufferHoras;
+	int bufferSueldo;
+	int i;
+	int len;
+
+	FILE* pArchivo;
+	pArchivo= fopen(path,"w");
+
+	if(path != NULL && pArrayListEmployee != NULL)
+	{
+		len = ll_len(pArrayListEmployee);
+
+		if(pArchivo != NULL)
+		{
+			for(i=0;i<len;i++)
+			{
+				empleado = ll_get(pArrayListEmployee,i);
+				employee_getId(empleado,&bufferId);
+				employee_getSueldo(empleado,&bufferSueldo);
+				employee_getHorasTrabajadas(empleado,&bufferHoras);
+				employee_getNombre(empleado,bufferNombre);
+				fprintf(pArchivo,"%d,%s,%d,%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
+			}
+			printf("\nArchivo guardado correctamente.\n");
+			retorno = 0;
+		}
+		else
+		{
+			printf("\nError al guardar el archivo\n");
+		}
+
+	}
+	fclose(pArchivo);
+    return retorno;
 }
 
 /** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
@@ -318,6 +410,38 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
-    return 1;
+	int retorno = -1;
+	Employee* empleado = NULL;
+	int i;
+	int len;
+
+
+	FILE* pArchivoBin= NULL;
+	pArchivoBin =fopen(path,"wb");
+	if(path != NULL && pArrayListEmployee != NULL)
+	{
+		len = ll_len(pArrayListEmployee);
+
+		if(pArchivoBin != NULL)
+		{
+			for(i=0;i<len;i++)
+			{
+				empleado = (Employee*)ll_get(pArrayListEmployee,i);
+				if(empleado != NULL)
+				{
+					fwrite(empleado,sizeof(Employee),1,pArchivoBin);
+				}
+			}
+			printf("\nArchivo guardado correctamente.\n");
+			retorno = 0;
+		}
+		else
+		{
+			printf("\nError al guardar el archivo\n");
+		}
+
+	}
+	fclose(pArchivoBin);
+    return retorno;
 }
 

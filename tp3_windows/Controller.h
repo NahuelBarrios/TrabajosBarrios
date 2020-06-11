@@ -1,6 +1,6 @@
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee,int* idSave);
 int controller_getMaxId(LinkedList* pArrayListEmployee,int* id);
-int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee);
+int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee,int* idSaveBin);
 int controller_addEmployee(LinkedList* pArrayListEmployee,int id);
 int controller_editEmployee(LinkedList* pArrayListEmployee);
 int controller_removeEmployee(LinkedList* pArrayListEmployee);
