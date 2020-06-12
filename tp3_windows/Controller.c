@@ -1,17 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "LinkedList.h"
 #include "Employee.h"
 #include "utn.h"
 #include "parser.h"
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee,int* idSave)
 {
 	FILE* pArchivo;
@@ -40,14 +35,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee,int* idS
 	return retorno;
 }
 
-
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee,int* idSaveBin)
 {
 
@@ -77,13 +65,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee,int* i
 	return retorno;
 }
 
-/** \brief Alta de empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_addEmployee(LinkedList* pArrayListEmployee,int id)
 {
 	int retorno=-1;
@@ -122,14 +104,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee,int id)
 	return retorno;
 }
 
-
-/** \brief Modificar datos de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
 	int retorno = -1;
@@ -197,13 +172,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 	return retorno;
 }
 
-/** \brief Baja de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
 	int retorno = -1;
@@ -258,13 +227,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     return retorno;
 }
 
-/** \brief Listar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
 	 int retorno=-1;
@@ -278,7 +241,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 	    if(pArrayListEmployee != NULL)
 	    {
 	        len=ll_len(pArrayListEmployee);
-	        printf("\nId\t\tNombre\tHoras\tSueldo\n");
+	        printf("\n**Id\t    Nombre\t  Horas trabajadas\tSueldo**\n\n");
 	        for(i=0;i<len;i++)
 	        {
 	        	empleado=(Employee*)ll_get(pArrayListEmployee,i);
@@ -288,7 +251,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 	            	employee_getSueldo(empleado,&bufferSueldo);
 	            	employee_getHorasTrabajadas(empleado,&bufferHoras);
 	            	employee_getNombre(empleado,bufferNombre);
-	            	printf("%d\t\t%s\t%d\t%d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
+	            	printf("%4d%14s\t\t%d\t\t%6d\n",bufferId,bufferNombre,bufferHoras,bufferSueldo);
 	            }
 	        }
 	        retorno=0;
@@ -296,10 +259,10 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
 	    return retorno;
 }
 
-
+//****************************************************************************************
 int order_byId(void* thisA,void* thisB)
 {
-	int Order = -1;
+	int order = -1;
 	int idA;
 	int idB;
 
@@ -308,19 +271,28 @@ int order_byId(void* thisA,void* thisB)
 
 	if(idA>idB)
 	{
-		Order = 1;
+		order = 1;
 	}
 
-	return Order;
+	return order;
 }
 
-/** \brief Ordenar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+int order_byName(void* thisA,void* thisB)
+{
+	int order = -1;
+	char nameA[50];
+	char nameB[50];
+
+	employee_getNombre(thisA,nameA);
+	employee_getNombre(thisB,nameB);
+
+	if(strcmp(nameA,nameB)>0)
+	{
+		order = 1;
+	}
+	return order;
+}
+
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
 	int retorno = -1;
@@ -328,9 +300,9 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 
 	if(pArrayListEmployee != NULL)
 	{
-		while(option != 3)
+		while(option != 4)
 		{
-			utn_getInt(&option,"\nOrdenamiento:\n1-Por id Ascendente\n2-Por id Descendente\n3-Salir\nElija una opcion: ","\nError",1,10,3);
+			utn_getInt(&option,"\nOrdenamiento:\n1-Por id Ascendente\n2-Por id Descendente\n3-Por nombre Ascendente\n4-Salir\nElija una opcion: ","\nError",1,10,3);
 			switch(option)
 			{
 			case 1:
@@ -342,6 +314,10 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 				printf("\nOrdenado de forma descendente correctamente\n");
 				break;
 			case 3:
+				ll_sort(pArrayListEmployee,order_byName,1); // order_byName. Le paso la direccion de memora de la funcion.
+				printf("\nOrdenado por nombre ascendente correctamente\n");
+				break;
+			case 4:
 				printf("\nSalió.\n");
 				break;
 			default: printf("\nIngrese una opcion valida.\n");
@@ -352,13 +328,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
 	return retorno;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
 	int retorno = -1;
@@ -401,13 +371,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
     return retorno;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
+//****************************************************************************************
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
 	int retorno = -1;

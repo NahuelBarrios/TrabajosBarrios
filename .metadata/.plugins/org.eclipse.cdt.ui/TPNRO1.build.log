@@ -1,1 +1,9 @@
-Info: Nothing to build for TPNRO1
+16:13:32 **** Rebuild of configuration Debug for project TPNRO1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\math.o" "..\\src\\math.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TPNRO1.o" "..\\src\\TPNRO1.c" 
+gcc -o TPNRO1.exe "src\\TPNRO1.o" "src\\math.o" "src\\utn.o" 
+
+16:13:42 Build Finished. 0 errors, 0 warnings. (took 9s.666ms)
+
