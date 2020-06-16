@@ -63,7 +63,7 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee,int* 
 			empleado = employee_new();
 			cant = fread(empleado,sizeof(empleado),1,pFile);
 
-			if(cant == 1)
+			if(cant == 1 && empleado != NULL)
 			{
 				if(employee_getId(empleado,&bufferId)==0 && employee_getNombre(empleado,bufferNombre)==0 &&
 						employee_getHorasTrabajadas(empleado,&bufferHoras)==0 && employee_getSueldo(empleado,&bufferSueldo)==0)
