@@ -93,3 +93,71 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c"
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
 gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
 Info: Nothing to build for TPNRO4
+19:11:50 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+Info: Nothing to build for TPNRO4
+19:22:52 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+Info: Nothing to build for TPNRO4
+Info: Nothing to build for TPNRO4
+Info: Nothing to build for TPNRO4
+19:25:09 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+Info: Nothing to build for TPNRO4
+19:40:01 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+Info: Nothing to build for TPNRO4
+19:40:17 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+19:48:52 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c: In function 'll_subList':
+..\src\LinkedList.c:557:19: warning: implicit declaration of function 'll_newLinkedlist'; did you mean 'll_newLinkedList'? [-Wimplicit-function-declaration]
+  557 |      cloneArray = ll_newLinkedlist();
+      |                   ^~~~~~~~~~~~~~~~
+      |                   ll_newLinkedList
+..\src\LinkedList.c:557:17: warning: assignment to 'LinkedList *' {aka 'struct LinkedList *'} from 'int' makes pointer from integer without a cast [-Wint-conversion]
+  557 |      cloneArray = ll_newLinkedlist();
+      |                 ^
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\LinkedList.o: in function `ll_subList':
+C:\Users\Nahu_\OneDrive\Escritorio\TrabajosACA\TPNRO4\Debug/../src/LinkedList.c:557: undefined reference to `ll_newLinkedlist'
+collect2.exe: error: ld returned 1 exit status
+19:48:58 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\LinkedList.o: in function `ll_subList':
+C:\Users\Nahu_\OneDrive\Escritorio\TrabajosACA\TPNRO4\Debug/../src/LinkedList.c:557: undefined reference to `ll_newLinkedlist'
+collect2.exe: error: ld returned 1 exit status
+19:49:16 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\LinkedList.o: in function `ll_subList':
+C:\Users\Nahu_\OneDrive\Escritorio\TrabajosACA\TPNRO4\Debug/../src/LinkedList.c:557: undefined reference to `ll_newLinkedlist'
+collect2.exe: error: ld returned 1 exit status
+19:49:44 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+Info: Nothing to build for TPNRO4
+19:54:32 **** Incremental Build of configuration Debug for project TPNRO4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o TPNRO4 "src\\LinkedList.o" "src\\main.o" "testing\\src\\Employee.o" "testing\\src\\addNodeTest.o" "testing\\src\\addTest.o" "testing\\src\\clearTest.o" "testing\\src\\cloneTest.o" "testing\\src\\containsAllTest.o" "testing\\src\\containsTest.o" "testing\\src\\deleteLinkedListTest.o" "testing\\src\\getNodeTest.o" "testing\\src\\getTest.o" "testing\\src\\indexOfTest.o" "testing\\src\\isEmptyTest.o" "testing\\src\\lenTest.o" "testing\\src\\main_test.o" "testing\\src\\newTest.o" "testing\\src\\popTest.o" "testing\\src\\pushTest.o" "testing\\src\\removeTest.o" "testing\\src\\setTest.o" "testing\\src\\sortTest.o" "testing\\src\\subListTest.o" "testing\\utest.o" 
+Info: Nothing to build for TPNRO4

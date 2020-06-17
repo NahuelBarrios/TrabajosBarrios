@@ -434,6 +434,34 @@ int ll_push(LinkedList* this, int index, void* pElement)
 void* ll_pop(LinkedList* this,int index)
 {
     void* returnAux = NULL;
+    int longitud;
+    Node* pNodo = NULL;
+    Node* pNodoAuxPrev = NULL;
+
+    longitud = ll_len(this);
+
+    if(this != NULL && index>=0 && index<longitud)
+    {
+    	pNodo = getNode(this,index);
+
+    	if(pNodo != NULL)
+    	{
+    		if(index == 0)
+    		{
+    			returnAux = pNodo->pElement;
+    			this->pFirstNode = pNodo->pNextNode;
+    			this->size--;
+    		}
+    		else
+    		{
+    			returnAux = pNodo->pElement;
+    			pNodoAuxPrev = getNode(this,index-1);
+    			pNodoAuxPrev->pNextNode = pNodo->pNextNode;
+    			this->size--;
+    		}
+    	}
+
+    }
 
     return returnAux;
 }
@@ -451,6 +479,18 @@ int ll_contains(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
 
+    if(this != NULL)
+    {
+    	if(ll_indexOf(this,pElement) != -1)
+    	{
+    		returnAux = 1; // Si contiene
+    	}
+    	else
+    	{
+    		returnAux = 0; // No contiene
+    	}
+    }
+
     return returnAux;
 }
 
@@ -466,6 +506,30 @@ int ll_contains(LinkedList* this, void* pElement)
 int ll_containsAll(LinkedList* this,LinkedList* this2)
 {
     int returnAux = -1;
+    int i;
+    int longitudThis2;
+
+    if(this != NULL && this2 != NULL)
+    {
+    	longitudThis2 = ll_len(this2);
+
+        if(longitudThis2 == 0)
+        {
+        	returnAux = 0;
+        }
+        for(i=0;i<longitudThis2;i++)
+        {
+        	if(ll_contains(this,ll_get(this2,i))==1)
+        	{
+        		returnAux = 1;
+        	}
+        	else
+        	{
+        		returnAux = 0;
+        		break;
+        	}
+        }
+    }
 
     return returnAux;
 }
@@ -483,6 +547,28 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
 LinkedList* ll_subList(LinkedList* this,int from,int to)
 {
     LinkedList* cloneArray = NULL;
+    Node* pNodeAux = NULL;
+    int longitud;
+    int i;
+
+    longitud= ll_len(this);
+    if(this != NULL && from >= 0 && from <= longitud && to > from && to <= longitud)
+    {
+    	cloneArray = ll_newLinkedList();
+
+    	if(cloneArray != NULL)
+    	{
+    		for(i=from;i<to;i++)
+    		{
+    			pNodeAux = ll_get(this,i);
+    			if(pNodeAux != NULL)
+    			{
+    				ll_add(cloneArray,pNodeAux);
+    			}
+    		}
+    	}
+
+    }
 
     return cloneArray;
 }
@@ -498,6 +584,14 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
 LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* cloneArray = NULL;
+    int longitud;
+
+    if(this != NULL)
+    {
+    	longitud = ll_len(this);
+
+    	cloneArray = ll_subList(this,0,longitud);
+    }
 
     return cloneArray;
 }
