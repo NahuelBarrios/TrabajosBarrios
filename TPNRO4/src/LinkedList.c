@@ -262,14 +262,14 @@ int ll_remove(LinkedList* this,int index)
     	if(index == 0)
     	{
     		this->pFirstNode = pNodo->pNextNode;
-    		this->size--;
     	}
     	else
     	{
     		pNodoRemove = getNode(this,index-1);
     		pNodoRemove->pNextNode = pNodo->pNextNode;
-    		this->size--;
     	}
+    	free(pNodo);
+    	this->size--;
     	returnAux = 0;
     }
     return returnAux;
@@ -607,6 +607,43 @@ LinkedList* ll_clone(LinkedList* this)
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux =-1;
+    int longitud;
+    int flag;
+    int i;
+    void* primerParametro;
+    void* segundoParametro;
+    void* auxiliarParametro;
+
+    if(this != NULL && pFunc != NULL && (order == 0 || order == 1))
+    {
+    	longitud = ll_len(this);
+
+    	if(longitud >= 0)
+    	{
+
+    		do{
+    			flag = 0;
+
+    			for(i=0;i<longitud-1;i++)
+    			{
+    				primerParametro = ll_get(this,i);
+    				segundoParametro = ll_get(this,i+1);
+
+    				if((pFunc(primerParametro,segundoParametro) < 0 && order == 0) || (pFunc(primerParametro,segundoParametro) > 0 && order == 1))
+    				{
+    					auxiliarParametro = primerParametro;
+    					primerParametro = segundoParametro;
+    					segundoParametro = auxiliarParametro;
+        				ll_set(this,i,primerParametro);
+        				ll_set(this,i+1,segundoParametro);
+    					flag = 1;
+    				}
+    				returnAux = 0;
+    			}
+    		}while(flag == 1);
+    	}
+
+    }
 
     return returnAux;
 
