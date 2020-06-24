@@ -292,17 +292,15 @@ int ll_clear(LinkedList* this)
     longitud = ll_len(this);
     if(this != NULL)
     {
-    	if(longitud>=0)
+    	while(longitud>=0)
     	{
-    		while(longitud>=0)
-    		{
-    			pNodo = ll_get(this,longitud);
-    			ll_remove(this,longitud);
-    			free(pNodo);
-    			longitud--;
-    		}
-    		returnAux = 0;
+    		pNodo = ll_get(this,longitud);
+    		ll_remove(this,longitud);
+    		free(pNodo);
+    		longitud--;
     	}
+    	returnAux = 0;
+
     }
 
     return returnAux;
