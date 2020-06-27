@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "articulo.h"
+
+eArticulo* articulo_new()
+{
+	eArticulo* articulo = (eArticulo*)malloc( sizeof(eArticulo));
+
+		if(articulo != NULL)
+		{
+			articulo->id = 0;
+			strcpy(articulo->articulo,"");
+			articulo->precio = 0;
+			strcpy(articulo->medida,"");
+			articulo->rubroId = 0;
+		}
+	return articulo;
+}
+//*******************************************************************************************************
+eArticulo* pelicula_newParametros(char* idStr,char* articuloStr,char* precioStr,char* medidaStr,char* reubroIdStr)
+{
+	eArticulo* pelicula = articulo_new(); // Le asigno puntero del array el nuevo espacio
+	int bufferMonto = 0;
+	if(pelicula != NULL)
+	{
+		pelicula_setId(pelicula,atoi(idStr)); // cargo los datos llamando la funcion set. transformandolos de char a enteros a traves del atoi
+		pelicula_setArticulo(pelicula,articuloStr);
+		pelicula_setPrecio(pelicula,atof(precioStr));
+		pelicula_setMedida(pelicula,medidaStr);
+		pelicula_setRubroId(pelicula,atoi(reubroIdStr));
+	}
+return pelicula; // Retorno el empleado
+}
+//*******************************************************************************************************
+int pelicula_setId(eArticulo* this,int id)
+{
+	int retorno = -1;
+
+	if(this!=NULL && id>=0)
+	{
+		this->id = id;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int pelicula_getId(eArticulo* this,int* id)
+{
+	int retorno = -1;
+
+		if(this!=NULL && id!= NULL)
+		{
+			*id = this->id;
+			retorno = 0;
+		}
+		return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setArticulo(eArticulo* this,char* articulo)
+{
+	int retorno = -1;
+
+	if(this!=NULL && articulo!= NULL)
+	{
+		strcpy(this->articulo,articulo);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int pelicula_getArticulo(eArticulo* this,char* articulo)
+{
+	int retorno = -1;
+
+	if(this!=NULL && articulo!= NULL)
+	{
+		strcpy(articulo,this->articulo);
+		retorno = 0;
+	}
+	return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setPrecio(eArticulo* this,float precio)
+{
+	int retorno = -1;
+
+	if(this!=NULL && precio>=0)
+	{
+		this->precio = precio;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int pelicula_getPrecio(eArticulo* this,float* precio)
+{
+	int retorno = -1;
+
+		if(this!=NULL && precio!= NULL)
+		{
+			*precio = this->precio;
+			retorno = 0;
+		}
+		return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setMedida(eArticulo* this,char* medida)
+{
+	int retorno = -1;
+
+	if(this!=NULL && medida!= NULL)
+	{
+		strcpy(this->medida,medida);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int pelicula_getMedida(eArticulo* this,char* medida)
+{
+	int retorno = -1;
+
+	if(this!=NULL && medida!= NULL)
+	{
+		strcpy(medida,this->medida);
+		retorno = 0;
+	}
+	return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setRubroId(eArticulo* this,int idRubro)
+{
+	int retorno = -1;
+
+	if(this!=NULL && idRubro>=0)
+	{
+		this->rubroId = idRubro;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int pelicula_getRubroId(eArticulo* this,int* idRubro)
+{
+	int retorno = -1;
+
+	if(this!=NULL && idRubro!= NULL)
+	{
+		*idRubro = this->rubroId;
+		retorno = 0;
+	}
+	return retorno;
+}

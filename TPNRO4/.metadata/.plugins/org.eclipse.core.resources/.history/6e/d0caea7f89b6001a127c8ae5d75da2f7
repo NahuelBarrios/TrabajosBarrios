@@ -1,0 +1,40 @@
+/*
+ ============================================================================
+ Name        : main.c
+ Author      : Nahuel
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "utn.h"
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	LinkedList* pArrayArticulos = ll_newLinkedList();
+	int option = 0;
+
+	while(option != 5)
+	{
+		printf("\n1-Cargar un archivo y abrirlo");
+		utn_getInt(&option,"\nElija una opcion: " ,"\nError\n",1,10,3);
+
+		switch(option)
+		{
+		case 1:
+
+			break;
+
+		}
+	}
+
+
+
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "articulo.h"
+
+eArticulo* pelicula_new()
+{
+	eArticulo* articulo = (eArticulo*)malloc( sizeof(eArticulo));
+
+		if(articulo != NULL)
+		{
+			articulo->id = 0;
+			strcpy(articulo->articulo,"");
+			articulo->precio = 0;
+			strcpy(articulo->medida,"");
+			articulo->rubroId = 0;
+		}
+	return articulo;
+}
+
+
+//*******************************************************************************************************
+int pelicula_setId(eArticulo* this,int id)
+{
+	int retorno = -1;
+
+	if(this!=NULL && id>=0)
+	{
+		this->id = id;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int pelicula_getId(eArticulo* this,int* id)
+{
+	int retorno = -1;
+
+		if(this!=NULL && id!= NULL)
+		{
+			*id = this->id;
+			retorno = 0;
+		}
+		return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setArticulo(eArticulo* this,char* articulo)
+{
+	int retorno = -1;
+
+	if(this!=NULL && articulo!= NULL)
+	{
+		strcpy(this->articulo,articulo);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int pelicula_getArticulo(eArticulo* this,char* articulo)
+{
+	int retorno = -1;
+
+	if(this!=NULL && articulo!= NULL)
+	{
+		strcpy(articulo,this->articulo);
+		retorno = 0;
+	}
+	return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setPrecio(eArticulo* this,float precio)
+{
+	int retorno = -1;
+
+	if(this!=NULL && precio>=0)
+	{
+		this->precio = precio;
+		retorno = 0;
+	}
+	return retorno;
+}
+
+int pelicula_getPrecio(eArticulo* this,float* precio)
+{
+	int retorno = -1;
+
+		if(this!=NULL && precio!= NULL)
+		{
+			*precio = this->precio;
+			retorno = 0;
+		}
+		return retorno;
+}
+//*******************************************************************************************************
+int pelicula_setMedida(eArticulo* this,char* medida)
+{
+	int retorno = -1;
+
+	if(this!=NULL && medida!= NULL)
+	{
+		strcpy(this->medida,medida);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int pelicula_getMedida(eArticulo* this,char* medida)
+{
+	int retorno = -1;
+
+	if(this!=NULL && medida!= NULL)
+	{
+		strcpy(medida,this->medida);
+		retorno = 0;
+	}
+	return retorno;
+}
+//*******************************************************************************************************
+

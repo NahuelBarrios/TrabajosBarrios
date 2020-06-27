@@ -1,0 +1,6 @@
+20:13:34 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+
+20:13:35 Build Finished. 0 errors, 0 warnings. (took 672ms)
+

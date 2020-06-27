@@ -1,0 +1,22 @@
+/*
+ * articulo.h
+ *
+ *  Created on: 24 jun. 2020
+ *      Author: Nahu_
+ */
+
+#ifndef ARTICULO_H_
+#define ARTICULO_H_
+
+typedef struct
+{
+	int id;
+	char artículo[51];
+	float precio;
+	char medida[12];
+	int rubroId;
+
+}eArticulo;
+
+
+#endif /* ARTICULO_H_ */

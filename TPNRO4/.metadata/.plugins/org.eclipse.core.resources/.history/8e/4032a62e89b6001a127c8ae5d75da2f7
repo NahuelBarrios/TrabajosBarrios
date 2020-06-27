@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "articulo.h"
+
+eArticulo* pelicula_new()
+{
+	eArticulo* pelicula = (eArticulo*)malloc( sizeof(eArticulo));
+
+		if(pelicula != NULL)
+		{
+			pelicula->id = 0;
+			strcpy(pelicula->articulo, "");
+			pelicula->precio = 0;
+			strcpy(pelicula->medida, "");
+			pelicula->rubroId = 0;
+		}
+
+	return pelicula;
+}

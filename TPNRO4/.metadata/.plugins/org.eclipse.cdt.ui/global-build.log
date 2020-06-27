@@ -1,0 +1,369 @@
+00:37:55 **** Clean-only build of configuration Debug for project main ****
+rm -rf src/controller.o src/main.o main.exe src/parser.o src/main.d src/LinkedList.d src/articulo.d src/utn.d src/LinkedList.o src/articulo.o src/parser.d src/controller.d src/utn.o 
+00:51:01 **** Rebuild of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_utiliceMap':
+..\src\controller.c:136:24: warning: passing argument 2 of 'articulo_getPrecio' makes pointer from integer without a cast [-Wint-conversion]
+  136 |   articulo_getPrecio(p,bufferPrecio);
+      |                        ^~~~~~~~~~~~
+      |                        |
+      |                        int
+In file included from ..\src\controller.c:12:
+..\src\articulo.h:32:45: note: expected 'int *' but argument is of type 'int'
+   32 | int articulo_getPrecio(eArticulo* this,int* precio);
+      |                                        ~~~~~^~~~~~
+..\src\controller.c:136:3: warning: 'bufferPrecio' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  136 |   articulo_getPrecio(p,bufferPrecio);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\articulo.o" "..\\src\\articulo.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+00:51:31 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:06:39 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+01:07:19 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+01:07:34 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:20:02 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c: In function 'main':
+..\src\main.c:59:7: warning: implicit declaration of function 'controller_saveData'; did you mean 'controller_loadData'? [-Wimplicit-function-declaration]
+   59 |    if(controller_saveData("mapeado.csv",pArrayArticulos)==0)
+      |       ^~~~~~~~~~~~~~~~~~~
+      |       controller_loadData
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+01:20:19 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:21:54 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+01:29:46 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+01:33:04 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:35:32 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file main.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:35:35 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:37:15 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file main.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:37:19 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+01:42:32 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+01:43:27 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:48:32 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:50:43 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file main.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+01:50:45 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+01:52:30 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+01:58:44 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+02:03:23 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\articulo.o" "..\\src\\articulo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file main.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+02:03:27 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+02:05:39 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+02:07:05 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+02:23:03 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+13:14:09 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+14:07:21 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+..\src\LinkedList.c: In function 'll_clear':
+..\src\LinkedList.c:296:11: warning: unused variable 'pNodo' [-Wunused-variable]
+  296 |     Node* pNodo = NULL;
+      |           ^~~~~
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+14:07:38 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+18:05:41 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+18:46:57 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\articulo.o" "..\\src\\articulo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_informe':
+..\src\controller.c:231:24: error: too few arguments to function 'll_count'
+  231 |   cantPrecioMayor100 = ll_count();
+      |                        ^~~~~~~~
+In file included from ..\src\controller.c:11:
+..\src\linkedlist.h:44:5: note: declared here
+   44 | int ll_count(LinkedList* this,int (*fn)(void*));
+      |     ^~~~~~~~
+..\src\controller.c:232:28: error: too few arguments to function 'll_count'
+  232 |   cantRubroCuidadoDeRopa = ll_count();
+      |                            ^~~~~~~~
+In file included from ..\src\controller.c:11:
+..\src\linkedlist.h:44:5: note: declared here
+   44 | int ll_count(LinkedList* this,int (*fn)(void*));
+      |     ^~~~~~~~
+..\src\controller.c:227:6: warning: variable 'cantRubroCuidadoDeRopa' set but not used [-Wunused-but-set-variable]
+  227 |  int cantRubroCuidadoDeRopa=0;
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:226:6: warning: variable 'cantPrecioMayor100' set but not used [-Wunused-but-set-variable]
+  226 |  int cantPrecioMayor100=0;
+      |      ^~~~~~~~~~~~~~~~~~
+..\src\controller.c: In function 'controller_precioMasCien':
+..\src\controller.c:248:10: warning: dereferencing 'void *' pointer
+  248 |   cant= p->precio;
+      |          ^~
+..\src\controller.c:248:10: error: request for member 'precio' in something not a structure or union
+..\src\controller.c:242:6: warning: variable 'cant' set but not used [-Wunused-but-set-variable]
+  242 |  int cant;
+      |      ^~~~
+..\src\controller.c:241:13: warning: unused variable 'articulo' [-Wunused-variable]
+  241 |  eArticulo* articulo;
+      |             ^~~~~~~~
+18:52:54 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_informe':
+..\src\controller.c:231:52: error: 'controller_precioMasCien' undeclared (first use in this function)
+  231 |   cantPrecioMayor100 = ll_count(pArrayListArticulo,controller_precioMasCien);
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:231:52: note: each undeclared identifier is reported only once for each function it appears in
+..\src\controller.c:232:56: error: 'controller_cantCuidadoRopa' undeclared (first use in this function)
+  232 |   cantRubroCuidadoDeRopa = ll_count(pArrayListArticulo,controller_cantCuidadoRopa);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:227:6: warning: variable 'cantRubroCuidadoDeRopa' set but not used [-Wunused-but-set-variable]
+  227 |  int cantRubroCuidadoDeRopa=0;
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:226:6: warning: variable 'cantPrecioMayor100' set but not used [-Wunused-but-set-variable]
+  226 |  int cantPrecioMayor100=0;
+      |      ^~~~~~~~~~~~~~~~~~
+..\src\controller.c: In function 'controller_precioMasCien':
+..\src\controller.c:242:6: warning: unused variable 'cant' [-Wunused-variable]
+  242 |  int cant;
+      |      ^~~~
+..\src\controller.c: In function 'controller_cantCuidadoRopa':
+..\src\controller.c:258:6: warning: unused variable 'cant' [-Wunused-variable]
+  258 |  int cant;
+      |      ^~~~
+18:54:40 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_informe':
+..\src\controller.c:231:52: error: 'controller_precioMasCien' undeclared (first use in this function)
+  231 |   cantPrecioMayor100 = ll_count(pArrayListArticulo,controller_precioMasCien);
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:231:52: note: each undeclared identifier is reported only once for each function it appears in
+..\src\controller.c:232:56: error: 'controller_cantCuidadoRopa' undeclared (first use in this function)
+  232 |   cantRubroCuidadoDeRopa = ll_count(pArrayListArticulo,controller_cantCuidadoRopa);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c: In function 'controller_precioMasCien':
+..\src\controller.c:244:6: warning: unused variable 'cant' [-Wunused-variable]
+  244 |  int cant;
+      |      ^~~~
+..\src\controller.c: In function 'controller_cantCuidadoRopa':
+..\src\controller.c:260:6: warning: unused variable 'cant' [-Wunused-variable]
+  260 |  int cant;
+      |      ^~~~
+18:55:22 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_informe':
+..\src\controller.c:231:52: error: 'controller_precioMasCien' undeclared (first use in this function)
+  231 |   cantPrecioMayor100 = ll_count(pArrayListArticulo,controller_precioMasCien);
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:231:52: note: each undeclared identifier is reported only once for each function it appears in
+..\src\controller.c:232:56: error: 'controller_cantCuidadoRopa' undeclared (first use in this function)
+  232 |   cantRubroCuidadoDeRopa = ll_count(pArrayListArticulo,controller_cantCuidadoRopa);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+18:55:48 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_informe':
+..\src\controller.c:231:52: error: 'controller_precioMasCien' undeclared (first use in this function)
+  231 |   cantPrecioMayor100 = ll_count(pArrayListArticulo,controller_precioMasCien);
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:231:52: note: each undeclared identifier is reported only once for each function it appears in
+..\src\controller.c:232:56: error: 'controller_cantCuidadoRopa' undeclared (first use in this function)
+  232 |   cantRubroCuidadoDeRopa = ll_count(pArrayListArticulo,controller_cantCuidadoRopa);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+18:56:19 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+..\src\controller.c: In function 'controller_informe':
+..\src\controller.c:231:52: error: 'controller_precioMasCien' undeclared (first use in this function)
+  231 |   cantPrecioMayor100 = ll_count(pArrayListArticulo,controller_precioMasCien);
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\controller.c:231:52: note: each undeclared identifier is reported only once for each function it appears in
+..\src\controller.c:232:56: error: 'controller_cantCuidadoRopa' undeclared (first use in this function)
+  232 |   cantRubroCuidadoDeRopa = ll_count(pArrayListArticulo,controller_cantCuidadoRopa);
+      |                                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+18:57:37 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\articulo.o" "..\\src\\articulo.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+18:58:58 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\articulo.o" "..\\src\\articulo.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+19:02:35 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+19:11:32 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\articulo.o" "..\\src\\articulo.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\parser.o" "..\\src\\parser.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+19:22:08 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\controller.o" "..\\src\\controller.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+19:23:36 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+Info: Nothing to build for main
+20:11:27 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+20:12:32 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+Info: Nothing to build for main
+20:13:33 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\LinkedList.o" "..\\src\\LinkedList.c" 
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file main.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:13:34 **** Incremental Build of configuration Debug for project main ****
+Info: Internal Builder is used for build
+gcc -o main.exe "src\\LinkedList.o" "src\\articulo.o" "src\\controller.o" "src\\main.o" "src\\parser.o" "src\\utn.o" 
